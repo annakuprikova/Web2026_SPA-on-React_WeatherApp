@@ -1,0 +1,371 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #e2e8f0;
+    --secondary-hover: #cbd5e1;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --error-color: #ef4444;
+    --border-color: #e2e8f0;
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+
+/* BUTTONS COMPONENT */
+button {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.button-use-my-location {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.button-use-my-location:hover {
+    background-color: var(--primary-hover);
+}
+
+.button-container-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.dashboard-header__logout-button {
+    background-color: var(--secondary-color);
+    color: var(--text-main);
+}
+
+.dashboard-header__logout-button:hover {
+    background-color: var(--secondary-hover);
+}
+
+
+/* AUTH, FORM AND LOGIN PAGE */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.auth-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+}
+
+.auth-card__header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-card__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.auth-card__subtitle {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-top: 4px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-form__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.login-form__input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.login-form__input:focus {
+    border-color: var(--primary-color);
+}
+
+.login-form__error {
+    color: var(--error-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.login-form__button {
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-form__button:hover {
+    background-color: var(--primary-hover);
+}
+
+
+/* DASHBOARD */
+.dashboard-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 32px;
+}
+
+.dashboard-header__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboard-header__title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.dashboard-content {
+    max-width: 1100px;
+    width: 100%;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.dashboard-city {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.dashboard-city__name {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.dashboard-city__description {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* WEATHER LIST AND CARDS */
+.weather-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.weather-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-4px);
+}
+
+.weather-card__date {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-main);
+    text-transform: capitalize;
+}
+
+.weather-card__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 8px;
+}
+
+.weather-card__icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.weather-card:hover .weather-card__icon {
+    transform: scale(1.1);
+}
+
+.weather-card__status {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.weather-card__details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 8px 0 12px 0;
+    padding: 0 8px;
+}
+
+.weather-card__detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-main);
+}
+
+.detail-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.weather-card__footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+}
+
+.weather-card__temp {
+    display: flex;
+    flex-direction: column;
+}
+
+.temp-label {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.temp-value {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
+/* LOADER AND ERRORS */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 0;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--secondary-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loader-text {
+    margin-top: 16px;
+    color: var(--text-muted);
+}
+
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    padding: 32px;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
