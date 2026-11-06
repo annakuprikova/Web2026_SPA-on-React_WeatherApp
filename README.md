@@ -1,16 +1,32 @@
-# React + Vite
+# Weather Dashboard SPA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A student Single Page Application (SPA) for a 5-day weather forecast with geolocation support, dynamic reverse geocoding, and cookie-based authentication.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Frontend: React, Vite, React Router DOM, JSX
+- Styling: CSS Modules / CSS Variables, BEM methodology, responsive layout (Flexbox / Grid)
+- APIs & Services:
+  - Open-Meteo API (weather data and meteorological metrics)
+  - Nominatim OpenStreetMap API (reverse geocoding to determine city name by coordinates)
+  - Browser Geolocation API
+- State Management & Storage: React Hooks (`useState`, `useEffect`), browser Cookies (`document.cookie`)
 
-## React Compiler
+## Key Features
+> **Note:** This is an educational/portfolio project. Authentication is implemented in a simplified client-side manner using cookies for demonstration purposes and does not reflect production-level security standards.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Authorization: Protected access to the main screen using cookie tokens (routing implemented via private routes `ProtectedRoute`).
+2. Interactive Geolocation:
+   - Automatic forecast loading for Kyiv by default.
+   - "Use my location" button that detects current user coordinates via the browser.
+   - Automatic conversion of coordinates into the actual city name (e.g., Dnipro, Lviv, Odesa) using the OpenStreetMap API.
+3. Detailed 5-Day Weather Forecast:
+   - Dynamic display of maximum and minimum temperature.
+   - Mapping of SVG weather icons based on Open-Meteo codes (`sunny`, `cloudy`, `rainy`, `snowy`, `windy`).
+   - Advanced meteorological metrics for each card: maximum wind speed (`km/h`), precipitation amount (`mm`), and ultraviolet index (`UV`).
 
-## Expanding the ESLint configuration
+## How to Run Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/annakuprikova/Web2026_SPA-on-React_WeatherApp.git](https://github.com/annakuprikova/Web2026_SPA-on-React_WeatherApp.git)
